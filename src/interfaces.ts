@@ -16,5 +16,7 @@ export interface infoProps  {
     isFat: boolean
   }
 
-
+ export type T = {
+    [key: string] : number
+  }
 

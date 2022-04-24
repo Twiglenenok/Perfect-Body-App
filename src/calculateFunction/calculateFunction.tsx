@@ -1,21 +1,22 @@
 
-import {infoProps, resultProps} from "../interfaces";
-
+import {infoProps, resultProps, T} from "../interfaces";
 
 function weightGain(info: infoProps): object {
 
 
-    const activityCoef = {
+    const activityCoef: T = {
         min: 1.2,
         low: 1.375,
         medium: 1.55,
         high: 1.725,
         max: 1.9
     }
-    const weight = Number(info.weight);
-    const height = Number(info.height);
-    const age = Number(info.age)
-    //const coef: number = activityCoef[info.activity]
+    const neededCoef: string = info.activity
+    console.log(neededCoef)
+    const weight: number = Number(info.weight);
+    const height: number = Number(info.height);
+    const age: number = Number(info.age)
+    const coef: number = activityCoef[info.activity]
 
 
     let result: resultProps = {
@@ -26,10 +27,10 @@ function weightGain(info: infoProps): object {
     };
 
     if (info.male === 'male') {
-     result.main = Math.round(((10 * weight) + (height * 6.25 ) - (5 * age) + 5));
+     result.main = Math.round(((10 * weight) + (height * 6.25 ) - (5 * age) + 5) * coef);
 
     } else {
-      result.main = Math.round(((10 * weight) + (6.25 * height) - (5 * age) - 161));
+      result.main = Math.round(((10 * weight) + (6.25 * height) - (5 * age) - 161) * coef);
     }
     result.gain = Math.round(result.main + result.main * 0.35);
     result.loss = Math.round(result.main - result.main * 0.35);
