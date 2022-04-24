@@ -1,6 +1,12 @@
 import React from "react";
+interface CalculateProps {
+  resultButton(evt: React.MouseEvent<HTMLButtonElement>): void;
+  value: boolean;
+  clearButton(evt: React.MouseEvent<HTMLButtonElement>): void;
 
-function Calculate(props) {
+}
+
+export const Calculate: React.FC<CalculateProps> = props => {
     return (
         <div className="form__submit">
         <button onClick={evt => props.resultButton(evt)} className="form__submit-button button" type="submit" name="submit" disabled={!props.value}>
@@ -18,4 +24,3 @@ function Calculate(props) {
     )
 }
 
-export default Calculate

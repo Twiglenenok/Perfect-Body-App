@@ -1,8 +1,13 @@
 import React from "react";
-import Fat from "./resultVariation/fat";
-import Lean from "./resultVariation/lean";
+import {Fat} from "./resultVariation/fat";
+import {Lean} from "./resultVariation/lean";
 
-function Results(props) {
+interface ResultProps {
+value: object;
+active: boolean;
+}
+
+export const Results: React.FC<ResultProps> = props => {
 
     return (
         <div>

@@ -1,9 +1,9 @@
 import React from "react";
-import Age from "./age";
-import Height from "./height";
-import Weight from "./weight";
+import Age from "./Age";
+import Height from "./Height";
+import Weight from "./Weight";
 
-function Personal(props) {
+export const Personal: React.FC = () => {
     return (
         <fieldset className="form__item form__parameters" name="parameters">
         <legend className="visually-hidden">

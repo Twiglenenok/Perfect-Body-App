@@ -1,26 +1,26 @@
 import React, {useState, useEffect} from "react";
-import { animateScroll as scroll } from "react-scroll";
-import Activity from "./Activity";
-import Calculate from "./Calculate";
-import Gender from "./Gender";
-import Personal from "./Personal";
-import Results from "./Results";
+import {animateScroll as scroll} from "react-scroll"
+import {Activity} from "./Activity";
+import {Calculate} from "./Calculate";
+import {Gender} from "./Gender";
+import {Personal} from "./Personal";
+import {Results} from "./Results";
 import weightGain from "../calculateFunction/calculateFunction";
 import { PersonalContext } from "../context";
 
 export const Form: React.FC = () => {
 
   const [male, setMale] = useState<string>('');
-  const [age, setAge] = useState<string>('');
-  const [height, setHeight] = useState<string>('');
-  const [weight, setWeight] = useState<string>('');
+  const [age, setAge] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
+  const [weight, setWeight] = useState<number>(0);
   const [activity, setActivity] = useState<string>('');
   const [calculate, setCalculate] = useState<boolean>(false);
   const [isResult, setIsResult] = useState<boolean>(false);
   const [info, setInfo] = useState<object>({});
 
 
-  const allInfo = {
+  const allInfo: Object = {
     male: male,
     age: age,
     height: height,
@@ -33,7 +33,8 @@ export const Form: React.FC = () => {
 }
 
 function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
-  setAge(evt.target.value)
+  const convertedValue: number = Number(evt.target.value)
+  setAge(convertedValue)
 }
 
 
@@ -43,11 +44,13 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
 
 
   function heightHandler(evt: React.ChangeEvent<HTMLInputElement>) {
-    setHeight(evt.target.value)
+    const convertedValue: number = Number(evt.target.value)
+    setHeight(convertedValue)
   }
 
   function weightHandler(evt: React.ChangeEvent<HTMLInputElement>) {
-    setWeight(evt.target.value)
+    const convertedValue: number = Number(evt.target.value)
+    setWeight(convertedValue)
   }
 
   useEffect(() => {
@@ -60,19 +63,20 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
 
   let result = {};
 
-  function resultButton(evt: React.ChangeEvent<HTMLInputElement>) {
+  function resultButton(evt: React.MouseEvent<HTMLButtonElement>) {
     evt.preventDefault();
     setIsResult(true);
     result = weightGain(allInfo);
     setInfo(result);
-    setTimeout(scroll.scrollToBottom(), 400);
+    //setTimeout(scroll.scrollToBottom(), 400);
   }
+//Здесь и выше возможно ChangeEvent??
 
-  function clearButton(evt: React.ChangeEvent<HTMLInputElement>) {
+  function clearButton(evt: React.MouseEvent<HTMLButtonElement>) {
     evt.preventDefault();
-    setAge('');
-    setHeight('');
-    setWeight('');
+    setAge(0);
+    setHeight(0);
+    setWeight(0);
     setIsResult(false);
   }
 

@@ -1,7 +1,10 @@
 import React from "react";
 
+interface GenderProps {
+  onToggleGender(evt: React.ChangeEvent<HTMLInputElement>): void
+}
 
-function Gender({onToggleGender}) {
+export const Gender: React.FC<GenderProps> = props => {
     return (
         <div className="form__item">
         <h2 className="heading">
@@ -9,13 +12,13 @@ function Gender({onToggleGender}) {
         </h2>
         <ul className="switcher">
           <li className="switcher__item">
-            <input onChange={evt => onToggleGender(evt)} id="gender-male" name="gender" value="male" type="radio"></input>
+            <input onChange={evt => props.onToggleGender(evt)} id="gender-male" name="gender" value="male" type="radio"></input>
             <label htmlFor="gender-male">
               Мужчина
             </label>
           </li>
           <li className="switcher__item">
-          <input onChange={evt => onToggleGender(evt)} id="gender-female" name="gender" value="female" type="radio"></input>
+          <input onChange={evt => props.onToggleGender(evt)} id="gender-female" name="gender" value="female" type="radio"></input>
             <label htmlFor="gender-female">
               Женщина
             </label>
@@ -25,4 +28,3 @@ function Gender({onToggleGender}) {
     )
 }
 
-export default Gender

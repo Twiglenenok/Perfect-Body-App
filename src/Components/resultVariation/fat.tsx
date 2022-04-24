@@ -1,6 +1,6 @@
 import React from "react";
 
-function Fat() {
+export const Fat: React.FC = () => {
     return(
         <div>
         <ul className="radios-group">
@@ -27,4 +27,3 @@ function Fat() {
     )
 }
 
-export default Fat

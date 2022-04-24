@@ -1,6 +1,10 @@
 import React from "react";
+interface ActivityProps {
+  activityHandler(evt: React.ChangeEvent<HTMLInputElement>): void;
+};
 
-function Activity({activityHandler}) {
+
+export const Activity: React.FC<ActivityProps> = props => {
     return (
         <fieldset className="form__item">
         <legend className="heading">
@@ -9,7 +13,7 @@ function Activity({activityHandler}) {
         <ul className="radios-group">
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => activityHandler(evt)} id="activity-minimal" name="activity" value="min" type="radio" required></input>
+              <input onChange={evt => props.activityHandler(evt)} id="activity-minimal" name="activity" value="min" type="radio" required></input>
               <label htmlFor="activity-minimal">
                 Минимальная
               </label>
@@ -20,7 +24,7 @@ function Activity({activityHandler}) {
           </li>
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => activityHandler(evt)} id="activity-low" name="activity" value="low" type="radio" required></input>
+              <input onChange={evt => props.activityHandler(evt)} id="activity-low" name="activity" value="low" type="radio" required></input>
               <label htmlFor="activity-low">
                 Низкая
               </label>
@@ -31,7 +35,7 @@ function Activity({activityHandler}) {
           </li>
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => activityHandler(evt)} id="activity-medium" name="activity" value="medium" type="radio" required></input>
+              <input onChange={evt => props.activityHandler(evt)} id="activity-medium" name="activity" value="medium" type="radio" required></input>
               <label htmlFor="activity-medium">
                 Средняя
               </label>
@@ -42,7 +46,7 @@ function Activity({activityHandler}) {
           </li>
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => activityHandler(evt)} id="activity-high" name="activity" value="high" type="radio" required></input>
+              <input onChange={evt => props.activityHandler(evt)} id="activity-high" name="activity" value="high" type="radio" required></input>
               <label htmlFor="activity-high">
                 Высокая
               </label>
@@ -53,7 +57,7 @@ function Activity({activityHandler}) {
           </li>
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => activityHandler(evt)} id="activity-maximal" name="activity" value="max" type="radio" required></input>
+              <input onChange={evt => props.activityHandler(evt)} id="activity-maximal" name="activity" value="max" type="radio" required></input>
               <label htmlFor="activity-maximal">
                 Очень высокая
               </label>
@@ -67,5 +71,3 @@ function Activity({activityHandler}) {
     )
 }
 
-
-export default Activity

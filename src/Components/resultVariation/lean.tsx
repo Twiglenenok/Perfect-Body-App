@@ -1,6 +1,6 @@
 import React from "react";
 
-function Lean() {
+export const Lean: React.FC = () => {
     return(
         <div>
         <ul className="radios-group">
@@ -26,5 +26,3 @@ function Lean() {
         </div>
     )
 }
-
-export default Lean
