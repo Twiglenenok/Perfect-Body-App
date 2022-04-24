@@ -4,9 +4,9 @@ const providerState = {
     ageHandler: (evt: React.ChangeEvent<HTMLInputElement>) => {},
     weightHandler: (evt: React.ChangeEvent<HTMLInputElement>) => {},
     heightHandler: (evt: React.ChangeEvent<HTMLInputElement>) => {},
-    age: 0,
-    height: 0,
-    weight: 0
+    age: '30',
+    height: '80',
+    weight: '180'
 }
 
 

@@ -13,9 +13,9 @@ import { PersonalContext} from "../context";
 export const Form: React.FC = () => {
 
   const [male, setMale] = useState<string>('');
-  const [age, setAge] = useState<number>(0);
-  const [height, setHeight] = useState<number>(0);
-  const [weight, setWeight] = useState<number>(0);
+  const [age, setAge] = useState<string>('');
+  const [height, setHeight] = useState<string>('');
+  const [weight, setWeight] = useState<string>('');
   const [activity, setActivity] = useState<string>('');
   const [calculate, setCalculate] = useState<boolean>(false);
   const [isResult, setIsResult] = useState<boolean>(false);
@@ -36,20 +36,11 @@ export const Form: React.FC = () => {
   }
 
   function toggleGender(evt: React.ChangeEvent<HTMLInputElement>) {
-    if (evt.target.value === 'male') {
-      setHeight(DEFAULT_MAN_HEIGHT);
-      setWeight(DEFAULT_MAN_WEIGHT);
-    } else {
-      setHeight(DEFAULT_WOMAN_HEIGHT);
-      setWeight(DEFAULT_WOMAN_WEIGHT);
-    }
-    setAge(DEFAULT_MAN_AGE);
     setMale(evt.target.value);
 }
 
 function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
-  const convertedValue: number = Number(evt.target.value)
-  setAge(convertedValue)
+  setAge(evt.target.value)
 }
 
 
@@ -59,13 +50,11 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
 
 
   function heightHandler(evt: React.ChangeEvent<HTMLInputElement>) {
-    const convertedValue: number = Number(evt.target.value)
-    setHeight(convertedValue)
+    setHeight(evt.target.value)
   }
 
   function weightHandler(evt: React.ChangeEvent<HTMLInputElement>) {
-    const convertedValue: number = Number(evt.target.value)
-    setWeight(convertedValue)
+    setWeight(evt.target.value)
   }
 
   useEffect(() => {
@@ -88,9 +77,9 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
 
   function clearButton(evt: React.MouseEvent<HTMLButtonElement>) {
     evt.preventDefault();
-    setAge(DEFAULT_MAN_AGE);
-    setHeight(DEFAULT_MAN_HEIGHT);
-    setWeight(DEFAULT_MAN_WEIGHT);
+    setAge('');
+    setHeight('');
+    setWeight('');
     setIsResult(false);
   }
 
