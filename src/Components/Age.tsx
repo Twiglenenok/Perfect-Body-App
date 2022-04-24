@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { PersonalContext } from "../context";
 
-function Age() {
+export const Age: React.FC = () => {
 
     const {ageHandler} = useContext(PersonalContext)
     const {age} = useContext(PersonalContext)
@@ -22,5 +22,3 @@ function Age() {
       </div>
     )
 }
-
-export default Age

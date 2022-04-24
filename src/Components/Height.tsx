@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { PersonalContext } from "../context";
 
-function Height() {
+export const Height: React.FC = () => {
 
     const {heightHandler} = useContext(PersonalContext)
     const {height} = useContext(PersonalContext)
@@ -22,5 +22,3 @@ function Height() {
       </div>
     )
 }
-
-export default Height

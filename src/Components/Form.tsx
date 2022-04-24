@@ -6,7 +6,8 @@ import {Gender} from "./Gender";
 import {Personal} from "./Personal";
 import {Results} from "./Results";
 import weightGain from "../calculateFunction/calculateFunction";
-import { PersonalContext } from "../context";
+import { PersonalContext} from "../context";
+
 
 export const Form: React.FC = () => {
 
@@ -17,7 +18,12 @@ export const Form: React.FC = () => {
   const [activity, setActivity] = useState<string>('');
   const [calculate, setCalculate] = useState<boolean>(false);
   const [isResult, setIsResult] = useState<boolean>(false);
-  const [info, setInfo] = useState<object>({});
+  const [info, setInfo] = useState({
+    main: 0,
+    gain: 0,
+    loss: 0,
+    isFat: true
+  });
 
 
   const allInfo: Object = {
@@ -61,7 +67,7 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
       }
   }, [male, age, height, weight, activity])
 
-  let result = {};
+  let result: any = {};
 
   function resultButton(evt: React.MouseEvent<HTMLButtonElement>) {
     evt.preventDefault();
@@ -79,7 +85,6 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
     setWeight(0);
     setIsResult(false);
   }
-
 
 
 
@@ -104,6 +109,5 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
         </PersonalContext.Provider>
     )
 }
-
 
 

@@ -1,7 +1,7 @@
 import React from "react";
-import Age from "./Age";
-import Height from "./Height";
-import Weight from "./Weight";
+import {Age} from "./Age";
+import {Height} from "./Height";
+import {Weight} from "./Weight";
 
 export const Personal: React.FC = () => {
     return (

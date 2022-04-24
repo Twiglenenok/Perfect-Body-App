@@ -1,4 +1,12 @@
-function weightGain(info) {
+/*type infoProps = {
+  male: String,
+  age: Number,
+  height: Number,
+  weight: Number,
+  activity: String
+}*/
+
+function weightGain(info: any): object {
 
     const activityCoef = {
         min: 1.2,
@@ -8,12 +16,12 @@ function weightGain(info) {
         max: 1.9
     }
     
-    const coef = activityCoef[info.activity]
+    //const coef: number = activityCoef[info.activity]
 
 
-    let result = {};
+    let result: any = {};
     if (info.male === 'male') {
-     result.main = Math.round(((10 * info.weight) + (6.25 * info.height) - (5 * info.age) + 5) * coef);
+     result.main = Math.round(((10 * info.weight) + (info.height * 6.25 ) - (5 * info.age) + 5));
 
     } else {
       result.main = Math.round(((10 * info.weight) + (6.25 * info.height) - (5 * info.age) - 161));

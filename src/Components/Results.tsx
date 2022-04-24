@@ -3,9 +3,14 @@ import {Fat} from "./resultVariation/fat";
 import {Lean} from "./resultVariation/lean";
 
 interface ResultProps {
-value: object;
+value: {
+main: number,
+loss: number,
+gain: number,
+isFat: boolean
+};
 active: boolean;
-}
+};
 
 export const Results: React.FC<ResultProps> = props => {
 
