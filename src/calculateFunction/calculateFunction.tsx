@@ -11,8 +11,7 @@ function weightGain(info: infoProps): object {
         high: 1.725,
         max: 1.9
     }
-    const neededCoef: string = info.activity
-    console.log(neededCoef)
+    
     const weight: number = Number(info.weight);
     const height: number = Number(info.height);
     const age: number = Number(info.age)
