@@ -1,12 +1,8 @@
-/*type infoProps = {
-  male: String,
-  age: Number,
-  height: Number,
-  weight: Number,
-  activity: String
-}*/
 
-function weightGain(info: any): object {
+import {infoProps, resultProps} from "../interfaces";
+
+
+function weightGain(info: infoProps): object {
 
 
     const activityCoef = {
@@ -22,7 +18,13 @@ function weightGain(info: any): object {
     //const coef: number = activityCoef[info.activity]
 
 
-    let result: any = {};
+    let result: resultProps = {
+      main: 0,
+      gain: 0,
+      loss: 0,
+      isFat: true
+    };
+
     if (info.male === 'male') {
      result.main = Math.round(((10 * weight) + (height * 6.25 ) - (5 * age) + 5));
 
@@ -31,7 +33,6 @@ function weightGain(info: any): object {
     }
     result.gain = Math.round(result.main + result.main * 0.35);
     result.loss = Math.round(result.main - result.main * 0.35);
-    result.isFat = true;
     const normal = Math.round((height / 2 - 20));
     if (normal > weight) {
     result.isFat = false

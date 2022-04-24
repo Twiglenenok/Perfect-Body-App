@@ -6,8 +6,8 @@ import {Gender} from "./Gender";
 import {Personal} from "./Personal";
 import {Results} from "./Results";
 import weightGain from "../calculateFunction/calculateFunction";
-import { DEFAULT_MAN_AGE,DEFAULT_MAN_HEIGHT, DEFAULT_WOMAN_HEIGHT, DEFAULT_MAN_WEIGHT, DEFAULT_WOMAN_WEIGHT } from "../DefaultConsts";
 import { PersonalContext} from "../context";
+import {infoProps, resultProps} from "../interfaces";
 
 
 export const Form: React.FC = () => {
@@ -19,7 +19,7 @@ export const Form: React.FC = () => {
   const [activity, setActivity] = useState<string>('');
   const [calculate, setCalculate] = useState<boolean>(false);
   const [isResult, setIsResult] = useState<boolean>(false);
-  const [info, setInfo] = useState({
+  const [info, setInfo] = useState<resultProps>({
     main: 0,
     gain: 0,
     loss: 0,
@@ -27,7 +27,7 @@ export const Form: React.FC = () => {
   });
 
 
-  const allInfo: Object = {
+  const allInfo: infoProps = {
     male: male,
     age: age,
     height: height,
