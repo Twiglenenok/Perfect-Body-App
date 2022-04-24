@@ -6,6 +6,7 @@ import {Gender} from "./Gender";
 import {Personal} from "./Personal";
 import {Results} from "./Results";
 import weightGain from "../calculateFunction/calculateFunction";
+import { DEFAULT_MAN_AGE,DEFAULT_MAN_HEIGHT, DEFAULT_WOMAN_HEIGHT, DEFAULT_MAN_WEIGHT, DEFAULT_WOMAN_WEIGHT } from "../DefaultConsts";
 import { PersonalContext} from "../context";
 
 
@@ -35,7 +36,15 @@ export const Form: React.FC = () => {
   }
 
   function toggleGender(evt: React.ChangeEvent<HTMLInputElement>) {
-    setMale(evt.target.value)
+    if (evt.target.value === 'male') {
+      setHeight(DEFAULT_MAN_HEIGHT);
+      setWeight(DEFAULT_MAN_WEIGHT);
+    } else {
+      setHeight(DEFAULT_WOMAN_HEIGHT);
+      setWeight(DEFAULT_WOMAN_WEIGHT);
+    }
+    setAge(DEFAULT_MAN_AGE);
+    setMale(evt.target.value);
 }
 
 function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
@@ -76,13 +85,12 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
     setInfo(result);
     //setTimeout(scroll.scrollToBottom(), 400);
   }
-//Здесь и выше возможно ChangeEvent??
 
   function clearButton(evt: React.MouseEvent<HTMLButtonElement>) {
     evt.preventDefault();
-    setAge(0);
-    setHeight(0);
-    setWeight(0);
+    setAge(DEFAULT_MAN_AGE);
+    setHeight(DEFAULT_MAN_HEIGHT);
+    setWeight(DEFAULT_MAN_WEIGHT);
     setIsResult(false);
   }
 

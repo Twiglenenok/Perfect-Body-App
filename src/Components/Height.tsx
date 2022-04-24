@@ -17,7 +17,7 @@ export const Height: React.FC = () => {
           </span>
         </div>
         <div className="input__wrapper">
-          <input onChange={evt => heightHandler(evt)} value={height} type="number" id="height" name="height" placeholder="0" inputMode="decimal" min="70" max="200" required></input>
+          <input onChange={evt => heightHandler(evt)} value={height} type="number" id="height" name="height" placeholder="" inputMode="decimal" min="70" max="200" required></input>
         </div>
       </div>
     )
