@@ -15,7 +15,7 @@ active: boolean;
 export const Results: React.FC<ResultProps> = props => {
 
     return (
-        <div>
+        <>
         <section className="counter__result" hidden={!props.active}>
 
         <h2 className="heading">
@@ -52,9 +52,9 @@ export const Results: React.FC<ResultProps> = props => {
        <h2 className="heading">
         Советы по тренировочному процессу
         </h2>
-          {props.value.isFat ? <Fat></Fat> : <Lean></Lean>}
+          {props.value.isFat ? <Fat/> : <Lean/>}
          </section>
-         </div>
+         </>
     )
 }
 

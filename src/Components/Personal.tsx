@@ -10,9 +10,9 @@ export const Personal: React.FC = () => {
           Физические параметры
         </legend>
         <div className="inputs-group">
-            <Age></Age>
-            <Height></Height>
-            <Weight></Weight>
+            <Age/>
+            <Height/>
+            <Weight/>
         </div>
       </fieldset>
     )

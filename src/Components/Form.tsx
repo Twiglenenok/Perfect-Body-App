@@ -93,16 +93,14 @@ export const Form: React.FC = () => {
         age: age,
         height: height,
         weight: weight
-        }}>
-      <div>
+        }}>    
         <form className="counter__form form" name="counter" action="#" method="post">
           <Gender onToggleGender={toggleGender}></Gender>
-         <Personal></Personal>
-          <Activity activityHandler={activityHandler}></Activity>
-          <Calculate value={calculate} resultButton={resultButton} clearButton={clearButton}></Calculate>
+         <Personal/>
+          <Activity activityHandler={activityHandler}/>
+          <Calculate value={calculate} resultButton={resultButton} clearButton={clearButton}/>
         </form>
-        <Results value={info} active={isResult}></Results>
-        </div>
+        <Results value={info} active={isResult}/>
         </PersonalContext.Provider>
     )
 }
