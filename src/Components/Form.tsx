@@ -39,7 +39,7 @@ export const Form: React.FC = () => {
     setMale(evt.target.value);
 }
 
-function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
+  function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
   setAge(evt.target.value)
 }
 
@@ -72,7 +72,7 @@ function ageHandler(evt: React.ChangeEvent<HTMLInputElement>) {
     setIsResult(true);
     result = weightGain(allInfo);
     setInfo(result);
-    //setTimeout(scroll.scrollToBottom(), 400);
+    scroll.scrollToBottom()
   }
 
   function clearButton(evt: React.MouseEvent<HTMLButtonElement>) {

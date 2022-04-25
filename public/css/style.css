@@ -186,7 +186,7 @@
   }
 
   .counter__heading:hover {
-    color: var(--color-accent-hover);
+    color: #FBB702;
     transition: 0.3s ease;
   }
   
