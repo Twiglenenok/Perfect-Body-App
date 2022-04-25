@@ -12,13 +12,13 @@ export const Gender: React.FC<GenderProps> = props => {
         </h2>
         <ul className="switcher">
           <li className="switcher__item">
-            <input onChange={evt => props.onToggleGender(evt)} id="gender-male" name="gender" value="male" type="radio"></input>
+            <input onChange={props.onToggleGender} id="gender-male" name="gender" value="male" type="radio"></input>
             <label htmlFor="gender-male">
               Мужчина
             </label>
           </li>
           <li className="switcher__item">
-          <input onChange={evt => props.onToggleGender(evt)} id="gender-female" name="gender" value="female" type="radio"></input>
+          <input onChange={props.onToggleGender} id="gender-female" name="gender" value="female" type="radio"></input>
             <label htmlFor="gender-female">
               Женщина
             </label>

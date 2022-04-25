@@ -13,7 +13,7 @@ export const Activity: React.FC<ActivityProps> = props => {
         <ul className="radios-group">
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => props.activityHandler(evt)} id="activity-minimal" name="activity" value="min" type="radio" required></input>
+              <input onChange={props.activityHandler} id="activity-minimal" name="activity" value="min" type="radio" required></input>
               <label htmlFor="activity-minimal">
                 Минимальная
               </label>
@@ -24,7 +24,7 @@ export const Activity: React.FC<ActivityProps> = props => {
           </li>
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => props.activityHandler(evt)} id="activity-low" name="activity" value="low" type="radio" required></input>
+              <input onChange={props.activityHandler} id="activity-low" name="activity" value="low" type="radio" required></input>
               <label htmlFor="activity-low">
                 Низкая
               </label>
@@ -35,7 +35,7 @@ export const Activity: React.FC<ActivityProps> = props => {
           </li>
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => props.activityHandler(evt)} id="activity-medium" name="activity" value="medium" type="radio" required></input>
+              <input onChange={props.activityHandler} id="activity-medium" name="activity" value="medium" type="radio" required></input>
               <label htmlFor="activity-medium">
                 Средняя
               </label>
@@ -46,7 +46,7 @@ export const Activity: React.FC<ActivityProps> = props => {
           </li>
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => props.activityHandler(evt)} id="activity-high" name="activity" value="high" type="radio" required></input>
+              <input onChange={props.activityHandler} id="activity-high" name="activity" value="high" type="radio" required></input>
               <label htmlFor="activity-high">
                 Высокая
               </label>
@@ -57,7 +57,7 @@ export const Activity: React.FC<ActivityProps> = props => {
           </li>
           <li className="radio">
             <div className="radio__wrapper">
-              <input onChange={evt => props.activityHandler(evt)} id="activity-maximal" name="activity" value="max" type="radio" required></input>
+              <input onChange={props.activityHandler} id="activity-maximal" name="activity" value="max" type="radio" required></input>
               <label htmlFor="activity-maximal">
                 Очень высокая
               </label>

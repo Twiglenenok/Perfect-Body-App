@@ -17,7 +17,7 @@ export const Age: React.FC = () => {
           </span>
         </div>
         <div className="input__wrapper">
-          <input onChange={evt => ageHandler(evt)} value={age} type="number" id="age" name="age" placeholder="0" inputMode="decimal" min="3" max="99" required></input>
+          <input onChange={ageHandler} value={age} type="number" id="age" name="age" placeholder="0" inputMode="decimal" min="3" max="99" required></input>
         </div>
       </div>
     )

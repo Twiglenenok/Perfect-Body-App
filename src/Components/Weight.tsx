@@ -17,7 +17,7 @@ export const Weight: React.FC = () => {
           </span>
         </div>
         <div className="input__wrapper">
-          <input onChange={evt => weightHandler(evt)} value={weight} type="number" id="weight" name="weight" placeholder="0" inputMode="decimal" required></input>
+          <input onChange={weightHandler} value={weight} type="number" id="weight" name="weight" placeholder="0" inputMode="decimal" required></input>
         </div>
       </div>
     )

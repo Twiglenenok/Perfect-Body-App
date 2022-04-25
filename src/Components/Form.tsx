@@ -95,7 +95,7 @@ export const Form: React.FC = () => {
         weight: weight
         }}>    
         <form className="counter__form form" name="counter" action="#" method="post">
-          <Gender onToggleGender={toggleGender}></Gender>
+          <Gender onToggleGender={toggleGender}/>
          <Personal/>
           <Activity activityHandler={activityHandler}/>
           <Calculate value={calculate} resultButton={resultButton} clearButton={clearButton}/>
